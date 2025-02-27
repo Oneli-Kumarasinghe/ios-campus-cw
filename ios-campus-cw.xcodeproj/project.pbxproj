@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500CC1B62D6E808900EAC878 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CC1B52D6E808200EAC878 /* MapView.swift */; };
 		503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */; };
 		503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */; };
 		503653E32D6B7C49007BD544 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653E22D6B7C49007BD544 /* LoginView.swift */; };
+		50FA6F032D7048D4005EC0C8 /* LectureHallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA6F022D7048C9005EC0C8 /* LectureHallDetails.swift */; };
+		50FA6F052D70C0A3005EC0C8 /* LibrariesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA6F042D70C09C005EC0C8 /* LibrariesDetails.swift */; };
+		50FA6F072D70C0F8005EC0C8 /* DeansOfficeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA6F062D70C0F2005EC0C8 /* DeansOfficeDetails.swift */; };
+		50FA6F092D70C166005EC0C8 /* ParkingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA6F082D70C15E005EC0C8 /* ParkingDetails.swift */; };
 		D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542838B2D6CD94F00F03006 /* Dashboard.swift */; };
 		D5B90CC82D5DE0E100EAD9D2 /* ios_campus_cwApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */; };
 		D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CC92D5DE0E100EAD9D2 /* ContentView.swift */; };
@@ -38,9 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		500CC1B52D6E808200EAC878 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepOne.swift; sourceTree = "<group>"; };
 		503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepTwo.swift; sourceTree = "<group>"; };
 		503653E22D6B7C49007BD544 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		50FA6F022D7048C9005EC0C8 /* LectureHallDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHallDetails.swift; sourceTree = "<group>"; };
+		50FA6F042D70C09C005EC0C8 /* LibrariesDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrariesDetails.swift; sourceTree = "<group>"; };
+		50FA6F062D70C0F2005EC0C8 /* DeansOfficeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeansOfficeDetails.swift; sourceTree = "<group>"; };
+		50FA6F082D70C15E005EC0C8 /* ParkingDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetails.swift; sourceTree = "<group>"; };
 		D542838B2D6CD94F00F03006 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		D5B90CC42D5DE0E100EAD9D2 /* ios-campus-cw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-campus-cw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_campus_cwApp.swift; sourceTree = "<group>"; };
@@ -102,6 +112,11 @@
 		D5B90CC62D5DE0E100EAD9D2 /* ios-campus-cw */ = {
 			isa = PBXGroup;
 			children = (
+				50FA6F082D70C15E005EC0C8 /* ParkingDetails.swift */,
+				50FA6F062D70C0F2005EC0C8 /* DeansOfficeDetails.swift */,
+				50FA6F042D70C09C005EC0C8 /* LibrariesDetails.swift */,
+				50FA6F022D7048C9005EC0C8 /* LectureHallDetails.swift */,
+				500CC1B52D6E808200EAC878 /* MapView.swift */,
 				503653E22D6B7C49007BD544 /* LoginView.swift */,
 				D542838B2D6CD94F00F03006 /* Dashboard.swift */,
 				503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */,
@@ -269,11 +284,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500CC1B62D6E808900EAC878 /* MapView.swift in Sources */,
 				503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */,
 				D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */,
+				50FA6F092D70C166005EC0C8 /* ParkingDetails.swift in Sources */,
 				503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */,
 				503653E32D6B7C49007BD544 /* LoginView.swift in Sources */,
 				D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */,
+				50FA6F032D7048D4005EC0C8 /* LectureHallDetails.swift in Sources */,
+				50FA6F052D70C0A3005EC0C8 /* LibrariesDetails.swift in Sources */,
+				50FA6F072D70C0F8005EC0C8 /* DeansOfficeDetails.swift in Sources */,
 				D5B90CC82D5DE0E100EAD9D2 /* ios_campus_cwApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

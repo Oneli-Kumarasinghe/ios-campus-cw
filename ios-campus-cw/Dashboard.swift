@@ -67,7 +67,7 @@ struct HomeView: View {
                             )
                         }
                         
-                        NavigationLink(destination: Text("Map")) {
+                        NavigationLink(destination: MapView()) {
                             MenuCard(
                                 title: "Map",
                                 icon: "map.fill",
