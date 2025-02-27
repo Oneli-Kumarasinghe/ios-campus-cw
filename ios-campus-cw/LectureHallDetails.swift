@@ -1,28 +1,22 @@
-//
-//  LectureHallDetails.swift
-//  ios-campus-cw
-//
-//  Created by Knight.Wolf on 2025-02-27.
-//
-
 import SwiftUI
 
 struct LectureHallDetails: View {
     let hallName: String
     let pathwaySteps: [(title: String, description: String)]
-    
+   
+    @Environment(\.dismiss) private var dismiss
     @State private var availableVotes: Int = 100
     @State private var unavailableVotes: Int = 0
     @State private var selectedStatus: LectureHallStatus = .available
-    
+   
     enum LectureHallStatus: String {
         case available = "Available"
         case unavailable = "Unavailable"
     }
-    
+   
     init(hallName: String) {
         self.hallName = hallName
-        
+       
         // Default pathway steps
         self.pathwaySteps = [
             (title: "Step 1: Enter the Campus", description: "Begin at the main entrance of the campus."),
@@ -32,62 +26,41 @@ struct LectureHallDetails: View {
             (title: "Step 5: Find Lecture Hall A", description: "Once on the second floor, walk down the hallway.")
         ]
     }
-    
+   
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                // Navigation bar (custom implementation)
-                HStack {
-                    Button(action: {
-                        // Back button action would go here
-                    }) {
-                        HStack(spacing: 5) {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.blue)
-                            Text("Back")
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    
-                    Spacer()
-                    Text("Lecture Hall 01")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding(.horizontal)
-                .padding(.vertical, 10)
-                
                 // Hall image - using LecHall from assets
                 Image("LecHall")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(8)
                     .padding(.horizontal)
-                
+               
                 // Hall description
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Lecture Hall Description")
                         .font(.caption)
                         .foregroundColor(.blue)
-                    
+                   
                     Text(hallName)
                         .font(.title)
                         .fontWeight(.bold)
                 }
                 .padding(.horizontal)
                 .padding(.top, 10)
-                
+               
                 // Status update section
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Lecture Hall Status Update")
                         .font(.headline)
                         .padding(.top, 5)
-                    
+                   
                     Text("\"Vote to keep the lecture hall status accurate. The most-voted status will be shown as current availability.\"")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                         .padding(.bottom, 5)
-                    
+                   
                     // Available option
                     HStack {
                         Button(action: {
@@ -98,7 +71,7 @@ struct LectureHallDetails: View {
                                 Circle()
                                     .stroke(Color.gray, lineWidth: 1)
                                     .frame(width: 24, height: 24)
-                                
+                               
                                 if selectedStatus == .available {
                                     Circle()
                                         .fill(Color.blue)
@@ -106,14 +79,14 @@ struct LectureHallDetails: View {
                                 }
                             }
                         }
-                        
+                       
                         Text("Available")
                             .padding(.leading, 5)
-                        
+                       
                         Spacer()
-                        
+                       
                         Text("\(availableVotes)%")
-                        
+                       
                         Button(action: {
                             // Show more info
                         }) {
@@ -122,7 +95,7 @@ struct LectureHallDetails: View {
                                 .padding(.leading, 5)
                         }
                     }
-                    
+                   
                     // Progress bar for Available
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
@@ -130,7 +103,7 @@ struct LectureHallDetails: View {
                                 .frame(width: geometry.size.width, height: 10)
                                 .foregroundColor(Color.gray.opacity(0.2))
                                 .cornerRadius(5)
-                            
+                           
                             Rectangle()
                                 .frame(width: geometry.size.width * CGFloat(availableVotes) / 100, height: 10)
                                 .foregroundColor(Color.green)
@@ -139,7 +112,7 @@ struct LectureHallDetails: View {
                     }
                     .frame(height: 10)
                     .padding(.vertical, 5)
-                    
+                   
                     // Unavailable option
                     HStack {
                         Button(action: {
@@ -150,7 +123,7 @@ struct LectureHallDetails: View {
                                 Circle()
                                     .stroke(Color.gray, lineWidth: 1)
                                     .frame(width: 24, height: 24)
-                                
+                               
                                 if selectedStatus == .unavailable {
                                     Circle()
                                         .fill(Color.blue)
@@ -158,14 +131,14 @@ struct LectureHallDetails: View {
                                 }
                             }
                         }
-                        
+                       
                         Text("Unavailable")
                             .padding(.leading, 5)
-                        
+                       
                         Spacer()
-                        
+                       
                         Text("\(unavailableVotes)%")
-                        
+                       
                         Button(action: {
                             // Show more info
                         }) {
@@ -174,7 +147,7 @@ struct LectureHallDetails: View {
                                 .padding(.leading, 5)
                         }
                     }
-                    
+                   
                     // Progress bar for Unavailable
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
@@ -182,7 +155,7 @@ struct LectureHallDetails: View {
                                 .frame(width: geometry.size.width, height: 10)
                                 .foregroundColor(Color.gray.opacity(0.2))
                                 .cornerRadius(5)
-                            
+                           
                             Rectangle()
                                 .frame(width: geometry.size.width * CGFloat(unavailableVotes) / 100, height: 10)
                                 .foregroundColor(Color.green)
@@ -194,16 +167,16 @@ struct LectureHallDetails: View {
                 }
                 .padding(.horizontal)
                 .padding(.top, 10)
-                
+               
                 Divider()
                     .padding(.vertical, 15)
-                
+               
                 // Pathway description
                 VStack(alignment: .leading, spacing: 15) {
                     Text("Pathway Description")
                         .font(.headline)
                         .padding(.bottom, 5)
-                    
+                   
                     ForEach(0..<pathwaySteps.count, id: \.self) { index in
                         VStack(alignment: .leading, spacing: 5) {
                             Text(pathwaySteps[index].title)
@@ -215,19 +188,19 @@ struct LectureHallDetails: View {
                     }
                 }
                 .padding(.horizontal)
-                
+               
                 Spacer(minLength: 30)
-                
+               
                 // Search bar at bottom
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
-                    
+                   
                     Text("Search Maps")
                         .foregroundColor(.gray)
-                    
+                   
                     Spacer()
-                    
+                   
                     Button(action: {
                         // Font size adjustment action
                     }) {
@@ -243,9 +216,11 @@ struct LectureHallDetails: View {
                 .padding(.horizontal)
             }
         }
-        .navigationBarHidden(true)
+        .navigationTitle(hallName)
+        .navigationBarTitleDisplayMode(.inline)
+        // No need for additional toolbar items - let NavigationStack handle the back button
     }
-    
+   
     // Function to update votes when user makes a selection
     private func updateVotes(for status: LectureHallStatus) {
         // Simple implementation to simulate voting
@@ -263,6 +238,8 @@ struct LectureHallDetails: View {
 // Preview provider for SwiftUI canvas
 struct LectureHallDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LectureHallDetails(hallName: "Harison Hall")
+        NavigationStack {
+            LectureHallDetails(hallName: "Harison Hall")
+        }
     }
 }
