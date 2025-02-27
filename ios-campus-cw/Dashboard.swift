@@ -18,23 +18,17 @@ struct DashboardView: View {
                 }
                 .tag(0)
             
-            Text("Profile")
+            EditProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
                 .tag(1)
             
-            Text("Messages")
+            NotificationView()
                 .tabItem {
-                    Label("Messages", systemImage: "message.fill")
+                    Label("Notifications", systemImage: "bell.fill")
                 }
                 .tag(2)
-            
-            Text("Info")
-                .tabItem {
-                    Label("Info", systemImage: "info.circle.fill")
-                }
-                .tag(3)
         }
     }
 }
@@ -51,7 +45,7 @@ struct HomeView: View {
                 VStack(spacing: 24) {
                     // Menu Grid
                     LazyVGrid(columns: columns, spacing: 16) {
-                        NavigationLink(destination: Text("Lecture Schedule")) {
+                        NavigationLink(destination: LectureScheduleView()) {
                             MenuCard(
                                 title: "Lecture Schedule",
                                 icon: "book.fill",
@@ -59,7 +53,7 @@ struct HomeView: View {
                             )
                         }
                         
-                        NavigationLink(destination: Text("Club Activities")) {
+                        NavigationLink(destination: ClubActivitiesView()) {
                             MenuCard(
                                 title: "Club Activities",
                                 icon: "sparkles.tv.fill",
@@ -75,7 +69,7 @@ struct HomeView: View {
                             )
                         }
                         
-                        NavigationLink(destination: Text("Discovery")) {
+                        NavigationLink(destination: DiscoveryView()) {
                             MenuCard(
                                 title: "Discovery",
                                 icon: "magnifyingglass.circle.fill",
