@@ -33,89 +33,19 @@ struct LectureScheduleView: View {
         NavigationView {
             VStack(spacing: 0) {
                 // Custom navigation bar with back button
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        // Back button that matches the design
-                        Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }) {
-                            HStack(spacing: 4) {
-                                Image(systemName: "chevron.left")
-                                    .foregroundColor(.blue)
-                                Text("Back")
-                                    .foregroundColor(.blue)
-                                    .font(.system(size: 17, weight: .regular))
-                            }
-                            .padding(8)
-                            //.background(Color(.systemGray6))
-                            .cornerRadius(8)
-                        }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            // Calendar action
-                        }) {
-                            Image(systemName: "calendar")
-                                .font(.title2)
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.top, 8)
-                    
-                    // Title added separately
-                    Text("Lecture Schedule")
+                HStack {
+                    Text("Lecture Schedules")
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.horizontal)
                         .padding(.top, 8)
-                    
-                    // Date picker section
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(formattedDate())
-                                .font(.headline)
-                            Spacer()
-                            Image(systemName: "chevron.down")
-                                .font(.caption)
-                        }
-                        .padding()
-                        .background(Color(.systemBackground))
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 0.5)
-                                .foregroundColor(Color(.systemGray4)),
-                            alignment: .bottom
-                        )
-                    }
-                }
-                
-                // View mode selector
-                HStack {
-                    ForEach(ViewMode.allCases, id: \.self) { mode in
-                        Button(action: {
-                            viewMode = mode
-                        }) {
-                            Text(mode.rawValue)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 16)
-                                .background(viewMode == mode ? Color.blue : Color.clear)
-                                .foregroundColor(viewMode == mode ? .white : .blue)
-                                .cornerRadius(8)
-                        }
-                    }
                     Spacer()
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 8)
+                .padding(.top, 10)
                 
                 // Lectures section
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Today's Lectures")
-                        .font(.headline)
-                        .padding(.horizontal)
-                        .padding(.top, 8)
-                    
                     ScrollView {
                         VStack(spacing: 12) {
                             ForEach(lectures) { lecture in
@@ -124,12 +54,14 @@ struct LectureScheduleView: View {
                         }
                         .padding(.horizontal)
                         .padding(.bottom)
+                        .padding(.top)
                     }
                 }
                 
                 Spacer()
             }
-            .navigationBarHidden(true)
+            .navigationBarHidden(true) // Hide the entire navigation bar
+            .navigationBarBackButtonHidden(true) // Ensure the back button is hidden
         }
     }
     
@@ -210,14 +142,3 @@ struct LectureScheduleView_Previews: PreviewProvider {
         LectureScheduleView()
     }
 }
-
-
-
-
-
-
-
-
-
-// This would typically be in your App.swift or SceneDelegate.swift
-

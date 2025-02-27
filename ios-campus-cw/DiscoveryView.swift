@@ -14,19 +14,11 @@ struct DiscoveryView: View {
             VStack(spacing: 0) {
                 // Header with back button
                 HStack {
-                    Button(action: {
-                        // Action for back button - would work in a real navigation stack
-                    }) {
-                        HStack(spacing: 5) {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.blue)
-                            Text("Back")
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    Spacer()
                     Text("Discovery")
-                        .font(.headline)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                     Spacer()
                 }
                 .padding(.horizontal)
@@ -35,11 +27,6 @@ struct DiscoveryView: View {
                 // Tips Section
                 ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
-                        Text("Tips")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.horizontal)
-                            .padding(.top, 10)
                         
                         // App Introduction
                         NavigationLink(
@@ -58,6 +45,7 @@ struct DiscoveryView: View {
                             }
                         }
                         .buttonStyle(PlainButtonStyle())
+                        .padding(.top, 10)
                         
                         // Club Creation
                         NavigationLink(
@@ -118,30 +106,6 @@ struct DiscoveryView: View {
                     .padding(.bottom, 20)
                 }
                 
-                // Search bar
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                    
-                    Text("Search Title")
-                        .foregroundColor(.gray)
-                    
-                    Spacer()
-                    
-                    Circle()
-                        .frame(width: 24, height: 24)
-                        .foregroundColor(.gray.opacity(0.3))
-                        .overlay(
-                            Text("A")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 14))
-                        )
-                }
-                .padding()
-                .background(Color(UIColor.systemGray5))
-                .cornerRadius(8)
-                .padding(.horizontal)
-                .padding(.vertical, 10)
             }
             .navigationBarHidden(true)
         }
@@ -231,9 +195,6 @@ struct GenericCarouselView: View {
                     }
                 }
                 Spacer()
-                Text("Discovery")
-                    .font(.headline)
-                Spacer()
             }
             .padding(.horizontal)
             .padding(.top, 10)
@@ -252,31 +213,6 @@ struct GenericCarouselView: View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .animation(.easeInOut, value: currentPage)
-            
-            // Search bar
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
-                
-                Text("Search Maps")
-                    .foregroundColor(.gray)
-                
-                Spacer()
-                
-                Circle()
-                    .frame(width: 24, height: 24)
-                    .foregroundColor(.gray.opacity(0.3))
-                    .overlay(
-                        Text("A")
-                            .foregroundColor(.gray)
-                            .font(.system(size: 14))
-                    )
-            }
-            .padding()
-            .background(Color(UIColor.systemGray5))
-            .cornerRadius(8)
-            .padding(.horizontal)
-            .padding(.vertical, 10)
         }
         .navigationBarHidden(true)
     }

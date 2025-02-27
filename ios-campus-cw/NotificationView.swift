@@ -55,10 +55,6 @@ struct NotificationView: View {
                 .padding()
             }
             .navigationTitle("Notifications")
-            .navigationBarItems(
-                trailing: Image(systemName: "bell.fill")
-                    .font(.system(size: 20))
-            )
         }
     }
 }
