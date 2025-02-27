@@ -10,6 +10,8 @@
 		503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */; };
 		503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */; };
 		503653E32D6B7C49007BD544 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653E22D6B7C49007BD544 /* LoginView.swift */; };
+		D50B4A4F2D6CEAC900823625 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B4A4E2D6CEAC900823625 /* Profile.swift */; };
+		D50B4A512D6F02A800823625 /* ClubActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B4A502D6F02A800823625 /* ClubActivities.swift */; };
 		D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542838B2D6CD94F00F03006 /* Dashboard.swift */; };
 		D5B90CC82D5DE0E100EAD9D2 /* ios_campus_cwApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */; };
 		D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CC92D5DE0E100EAD9D2 /* ContentView.swift */; };
@@ -44,6 +46,8 @@
 		503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepOne.swift; sourceTree = "<group>"; };
 		503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepTwo.swift; sourceTree = "<group>"; };
 		503653E22D6B7C49007BD544 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D50B4A4E2D6CEAC900823625 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		D50B4A502D6F02A800823625 /* ClubActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubActivities.swift; sourceTree = "<group>"; };
 		D542838B2D6CD94F00F03006 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		D5B90CC42D5DE0E100EAD9D2 /* ios-campus-cw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-campus-cw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_campus_cwApp.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */,
 				D5B90CC92D5DE0E100EAD9D2 /* ContentView.swift */,
 				503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */,
+				D50B4A4E2D6CEAC900823625 /* Profile.swift */,
+				D50B4A502D6F02A800823625 /* ClubActivities.swift */,
 				D5B90CCB2D5DE0E600EAD9D2 /* Assets.xcassets */,
 				D5B90CCD2D5DE0E700EAD9D2 /* Preview Content */,
 			);
@@ -282,7 +288,10 @@
 				503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */,
 				D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */,
 				EB49652F2D6CE888009DFFBC /* NotificationView.swift in Sources */,
+				D50B4A512D6F02A800823625 /* ClubActivities.swift in Sources */,
+
 				503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */,
+				D50B4A4F2D6CEAC900823625 /* Profile.swift in Sources */,
 				503653E32D6B7C49007BD544 /* LoginView.swift in Sources */,
 				D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */,
 				EB5AEDE42D6F613D00C0D991 /* DiscoveryView.swift in Sources */,

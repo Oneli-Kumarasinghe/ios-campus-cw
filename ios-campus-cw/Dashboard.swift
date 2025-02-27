@@ -2,7 +2,7 @@
 //  Dashboard.swift
 //  ios-campus-cw
 //
-//  Created by Theniya Kumarasinghe on 2025-02-13.
+//  Created by Oneli Kumarasinghe on 2025-02-13.
 //
 
 import SwiftUI
@@ -55,7 +55,7 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Lecture Schedule",
                                 icon: "book.fill",
-                                gradient: [Color(hex: "87CEEB"), Color(hex: "4682B4")]
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
                             )
                         }
                         
@@ -63,7 +63,7 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Club Activities",
                                 icon: "sparkles.tv.fill",
-                                gradient: [Color(hex: "87CEEB"), Color(hex: "4682B4")]
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
                             )
                         }
                         
@@ -71,7 +71,7 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Map",
                                 icon: "map.fill",
-                                gradient: [Color(hex: "87CEEB"), Color(hex: "4682B4")]
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
                             )
                         }
                         
@@ -79,7 +79,7 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Discovery",
                                 icon: "magnifyingglass.circle.fill",
-                                gradient: [Color(hex: "87CEEB"), Color(hex: "4682B4")]
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
                             )
                         }
                     }
