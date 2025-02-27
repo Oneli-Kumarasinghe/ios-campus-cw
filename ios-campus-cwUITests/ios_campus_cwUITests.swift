@@ -2,7 +2,7 @@
 //  ios_campus_cwUITests.swift
 //  ios-campus-cwUITests
 //
-//  Created by Theniya Kumarasinghe on 2025-02-13.
+//  Created by Oneli Kumarasinghe on 2025-02-13.
 //
 
 import XCTest
