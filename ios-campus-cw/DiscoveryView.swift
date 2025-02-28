@@ -166,7 +166,7 @@ struct TipCard: View {
     }
 }
 
-// Generic Carousel View which can be reused
+// Next, update the GenericCarouselView to pass the image name to the CarouselCard
 struct GenericCarouselView: View {
     @State private var currentPage: Int
     @Environment(\.presentationMode) var presentationMode
@@ -206,7 +206,8 @@ struct GenericCarouselView: View {
                         title: cards[index].title,
                         description: cards[index].description,
                         currentPage: index + 1,
-                        totalPages: cards.count
+                        totalPages: cards.count,
+                        imageName: cards[index].imageName
                     )
                     .tag(index + 1)
                 }
@@ -218,18 +219,20 @@ struct GenericCarouselView: View {
     }
 }
 
-// Data model for carousel cards
+// First, update your CarouselCardData struct to include an image property
 struct CarouselCardData {
     var title: String
     var description: String
+    var imageName: String // New property for image name
 }
 
-// Carousel Card View
+// Then update your CarouselCard view to use the image
 struct CarouselCard: View {
     var title: String
     var description: String
     var currentPage: Int
     var totalPages: Int
+    var imageName: String // Add this property
     
     var body: some View {
         VStack {
@@ -239,14 +242,14 @@ struct CarouselCard: View {
                 .multilineTextAlignment(.center)
                 .padding(.top)
             
-            // This would be your actual image in a real app
-            Rectangle()
-                .fill(Color.gray.opacity(0.2))
+            // Replace the Rectangle with Image
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
                 .frame(height: 200)
-                .overlay(
-                    Text("Illustration \(currentPage)")
-                        .foregroundColor(.gray)
-                )
+                .cornerRadius(8)
+                .padding(.horizontal)
+                .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
             
             Text(description)
                 .font(.body)
@@ -256,11 +259,10 @@ struct CarouselCard: View {
             
             // Pagination dots
             HStack(spacing: 8) {
-                ForEach(1...totalPages, id: \.self) { index in
-                    Circle()
-                        .fill(currentPage == index ? Color.blue : Color.gray.opacity(0.3))
-                        .frame(width: 8, height: 8)
-                }
+                Image(systemName: "arrow.right")
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .padding()
             }
             .padding(.top)
             
@@ -270,28 +272,34 @@ struct CarouselCard: View {
     }
 }
 
+
 // Specific Carousel Views for each type of tip
 
 // 1. App Introduction Carousel
+// App Introduction Carousel with images
 struct AppIntroCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
     let appIntroCards = [
         CarouselCardData(
             title: "Welcome to Campus App 🎓",
-            description: "Your all-in-one solution for university life! Navigate classes, clubs, events, and resources right from your phone."
+            description: "Your all-in-one solution for university life! Navigate classes, clubs, events, and resources right from your phone.",
+            imageName: "Illust1"
         ),
         CarouselCardData(
             title: "Create Your Profile 📝",
-            description: "Set up your student profile to personalize your experience. Add your major, interests, and preferences to get custom recommendations."
+            description: "Set up your student profile to personalize your experience. Add your major, interests, and preferences to get custom recommendations.",
+            imageName: "Illust2"
         ),
         CarouselCardData(
             title: "Discover Campus Resources 🔍",
-            description: "Find study spaces, dining options, health services, and more. Check hours, locations, and availability in real-time."
+            description: "Find study spaces, dining options, health services, and more. Check hours, locations, and availability in real-time.",
+            imageName: "Illust3"
         ),
         CarouselCardData(
             title: "Stay Connected 📱",
-            description: "Get notifications about classes, events, and important deadlines. Never miss an announcement again!"
+            description: "Get notifications about classes, events, and important deadlines. Never miss an announcement again!",
+            imageName: "Illust4"
         )
     ]
     
@@ -300,30 +308,35 @@ struct AppIntroCarouselView: View {
     }
 }
 
-// 2. Club Creation Carousel
+// Club Creation Carousel with images
 struct ClubCreationCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
     let clubCreationCards = [
         CarouselCardData(
             title: "Bring Your Idea to Life 💡",
-            description: "Have a passion or interest you want to share? Starting a club is a great way to connect with like-minded students! All you need is an idea and the enthusiasm to lead."
+            description: "Have a passion or interest you want to share? Starting a club is a great way to connect with like-minded students! All you need is an idea and the enthusiasm to lead.",
+            imageName: "Illust1"
         ),
         CarouselCardData(
             title: "Gather Your Founding Members 👥",
-            description: "Most campuses require a minimum number of members to officially register a club. Reach out to friends, classmates, or post on student forums to build your founding team."
+            description: "Most campuses require a minimum number of members to officially register a club. Reach out to friends, classmates, or post on student forums to build your founding team.",
+            imageName: "Illust2"
         ),
         CarouselCardData(
             title: "Get Official Recognition 🏛️",
-            description: "To make your club official, submit a proposal to the student affairs office! Include your club's purpose, structure, and leadership roles. Approval gives you access to resources and funding!"
+            description: "To make your club official, submit a proposal to the student affairs office! Include your club's purpose, structure, and leadership roles. Approval gives you access to resources and funding!",
+            imageName: "Illust3"
         ),
         CarouselCardData(
             title: "Find a Faculty Advisor 👨‍🏫",
-            description: "Some universities require clubs to have a faculty advisor. Look for a professor or staff member who shares your club's interests and can offer guidance and support."
+            description: "Some universities require clubs to have a faculty advisor. Look for a professor or staff member who shares your club's interests and can offer guidance and support.",
+            imageName: "Illust4"
         ),
         CarouselCardData(
             title: "Finally, Spread the Word 📣",
-            description: "Use social media, campus bulletin boards, and the student app's Club Activities section to promote your club and get people excited to join!"
+            description: "Use social media, campus bulletin boards, and the student app's Club Activities section to promote your club and get people excited to join!",
+            imageName: "Illust4"
         )
     ]
     
@@ -332,26 +345,30 @@ struct ClubCreationCarouselView: View {
     }
 }
 
-// 3. Student Discounts Carousel
+// Student Discounts Carousel with images
 struct DiscountsCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
     let discountCards = [
         CarouselCardData(
             title: "Student ID = Savings 💰",
-            description: "Your student ID card is your ticket to savings! Many businesses offer discounts when you show your valid student ID."
+            description: "Your student ID card is your ticket to savings! Many businesses offer discounts when you show your valid student ID.",
+            imageName: "Illust1"
         ),
         CarouselCardData(
             title: "Digital Discounts 💻",
-            description: "Get special pricing on software, streaming services, and online subscriptions with your .edu email address."
+            description: "Get special pricing on software, streaming services, and online subscriptions with your .edu email address.",
+            imageName: "Illust2"
         ),
         CarouselCardData(
             title: "Local Savings 🍔",
-            description: "Restaurants, coffee shops, and stores near campus often offer student deals. Check the app's local deals section for up-to-date offers."
+            description: "Restaurants, coffee shops, and stores near campus often offer student deals. Check the app's local deals section for up-to-date offers.",
+            imageName: "Illust3"
         ),
         CarouselCardData(
             title: "Travel Perks ✈️",
-            description: "From bus passes to airline tickets, being a student can save you money on transportation and accommodations when traveling."
+            description: "From bus passes to airline tickets, being a student can save you money on transportation and accommodations when traveling.",
+            imageName: "Illust4"
         )
     ]
     
@@ -360,30 +377,35 @@ struct DiscountsCarouselView: View {
     }
 }
 
-// 4. Essential Apps Carousel
+// Essential Apps Carousel with images
 struct EssentialAppsCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
     let appCards = [
         CarouselCardData(
             title: "Productivity Apps 📊",
-            description: "Stay organized with note-taking, to-do lists, and calendar apps that sync across all your devices."
+            description: "Stay organized with note-taking, to-do lists, and calendar apps that sync across all your devices.",
+            imageName: "Illust1"
         ),
         CarouselCardData(
             title: "Study Tools 📚",
-            description: "Flashcards, citation generators, and subject-specific apps to help you ace your classes."
+            description: "Flashcards, citation generators, and subject-specific apps to help you ace your classes.",
+            imageName: "Illust2"
         ),
         CarouselCardData(
             title: "Financial Management 💵",
-            description: "Track expenses, create budgets, and manage your student loans with financial apps designed for students."
+            description: "Track expenses, create budgets, and manage your student loans with financial apps designed for students.",
+            imageName: "Illust3"
         ),
         CarouselCardData(
             title: "Health & Wellness 🧘",
-            description: "Apps for fitness, meditation, sleep tracking, and mental health support to keep you balanced during the school year."
+            description: "Apps for fitness, meditation, sleep tracking, and mental health support to keep you balanced during the school year.",
+            imageName: "Illust4"
         ),
         CarouselCardData(
             title: "Campus-Specific Apps 🏛️",
-            description: "Don't forget apps created specifically for your university, like library resources, shuttle tracking, or dining services."
+            description: "Don't forget apps created specifically for your university, like library resources, shuttle tracking, or dining services.",
+            imageName: "Illust4"
         )
     ]
     
