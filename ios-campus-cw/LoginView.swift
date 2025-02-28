@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State private var isLoggedIn = false
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -40,17 +42,19 @@ struct LoginView: View {
                         .frame(width: 300)
                         .padding(.horizontal)
                     
-                    Button(action: {
-                        
-                    }) {
-                        Text("Log in")
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .frame(width: 300)
-                            .cornerRadius(21)
+                    NavigationLink(destination: DashboardView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) {
+                        Button(action: {
+                            self.isLoggedIn = true
+                        }) {
+                            Text("Log in")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.black)
+                                .foregroundColor(.white)
+                                .frame(width: 300)
+                                .cornerRadius(21)
+                        }
                     }
                     .padding(.horizontal)
                     
@@ -83,7 +87,6 @@ struct LoginView: View {
     }
 }
 
-// Custom Social Login Button Component
 struct SocialLoginButton: View {
     var text: String
     var color: Color

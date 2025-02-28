@@ -11,7 +11,7 @@ import SwiftUI
 struct ios_campus_cwApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }

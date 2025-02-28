@@ -19,7 +19,6 @@
 		D50B4A512D6F02A800823625 /* ClubActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B4A502D6F02A800823625 /* ClubActivities.swift */; };
 		D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542838B2D6CD94F00F03006 /* Dashboard.swift */; };
 		D5B90CC82D5DE0E100EAD9D2 /* ios_campus_cwApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */; };
-		D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CC92D5DE0E100EAD9D2 /* ContentView.swift */; };
 		D5B90CCC2D5DE0E600EAD9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B90CCB2D5DE0E600EAD9D2 /* Assets.xcassets */; };
 		D5B90CCF2D5DE0E700EAD9D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B90CCE2D5DE0E700EAD9D2 /* Preview Assets.xcassets */; };
 		D5B90CD92D5DE0E700EAD9D2 /* ios_campus_cwTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B90CD82D5DE0E700EAD9D2 /* ios_campus_cwTests.swift */; };
@@ -61,7 +60,6 @@
 		D542838B2D6CD94F00F03006 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		D5B90CC42D5DE0E100EAD9D2 /* ios-campus-cw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-campus-cw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_campus_cwApp.swift; sourceTree = "<group>"; };
-		D5B90CC92D5DE0E100EAD9D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D5B90CCB2D5DE0E600EAD9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5B90CCE2D5DE0E700EAD9D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D5B90CD42D5DE0E700EAD9D2 /* ios-campus-cwTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-campus-cwTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +132,6 @@
 				D542838B2D6CD94F00F03006 /* Dashboard.swift */,
 				503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */,
 				D5B90CC72D5DE0E100EAD9D2 /* ios_campus_cwApp.swift */,
-				D5B90CC92D5DE0E100EAD9D2 /* ContentView.swift */,
 				503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */,
 				D50B4A4E2D6CEAC900823625 /* Profile.swift */,
 				D50B4A502D6F02A800823625 /* ClubActivities.swift */,
@@ -304,7 +301,6 @@
 				5086A9342D721ECE0051CA5B /* MapView.swift in Sources */,
 				5086A9382D721F3F0051CA5B /* LibrariesDetails.swift in Sources */,
 				503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */,
-				D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */,
 				EB49652F2D6CE888009DFFBC /* NotificationView.swift in Sources */,
 				D50B4A512D6F02A800823625 /* ClubActivities.swift in Sources */,
 				503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */,

@@ -15,7 +15,6 @@ struct MapView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
-                // Category buttons - positioned below navigation bar with proper spacing
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         categoryButton(icon: "building.2", title: "Lec Halls", color: .blue, category: "LectureHalls")
@@ -112,8 +111,6 @@ struct MapView: View {
     }
 }
 
-// PinView and other view definitions remain the same
-
 struct PinView: View {
     let label: String?
     let systemImage: String?
@@ -141,10 +138,6 @@ struct PinView: View {
                     .cornerRadius(12)
                     .shadow(radius: 3)
             }
-           
-            Triangle()
-                .fill(Color.blue)
-                .frame(width: 10, height: 10)
         }
         .offset(x: xOffset, y: yOffset)
         .onTapGesture {
@@ -153,9 +146,6 @@ struct PinView: View {
     }
 }
 
-// The rest of your code stays the same...
-
-// PinPopupView remains the same
 struct PinPopupView: View {
     let label: String
     let category: String
@@ -231,19 +221,6 @@ struct PinPopupView: View {
     }
 }
 
-// Triangle shape remains the same
-struct Triangle: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-        path.closeSubpath()
-        return path
-    }
-}
-
-// Preview
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {

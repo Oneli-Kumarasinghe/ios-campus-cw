@@ -1,12 +1,4 @@
 //
-//  NotificationView.swift
-//  ios-campus-cw
-//
-//  Created by Samadhi Gunawardhana on 2025-02-24.
-//
-
-
-//
 //  NotificationViewController.swift
 //  ios-campus-cw
 //
@@ -107,12 +99,6 @@ struct NotificationCard: View {
         )
     }
 }
-
-//struct NotificationView: View {
-//    var body: some View {
-//        Text("Notification Page")
-//    }
-//}
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {

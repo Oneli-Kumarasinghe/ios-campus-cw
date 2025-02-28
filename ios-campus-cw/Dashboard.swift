@@ -43,13 +43,12 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 24) {
-                    // Menu Grid
                     LazyVGrid(columns: columns, spacing: 16) {
                         NavigationLink(destination: LectureScheduleView()) {
                             MenuCard(
                                 title: "Lecture Schedule",
                                 icon: "book.fill",
-                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")]
                             )
                         }
                         
@@ -57,7 +56,7 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Club Activities",
                                 icon: "sparkles.tv.fill",
-                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")]
                             )
                         }
                         
@@ -65,7 +64,7 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Map",
                                 icon: "map.fill",
-                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")]
                             )
                         }
                         
@@ -73,13 +72,12 @@ struct HomeView: View {
                             MenuCard(
                                 title: "Discovery",
                                 icon: "magnifyingglass.circle.fill",
-                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")] // Updated gradient
+                                gradient: [Color(hex: "2196F3"), Color(hex: "0D47A1")]
                             )
                         }
                     }
                     .padding(.horizontal)
                     
-                    // Recommended Section
                     VStack(alignment: .leading, spacing: 16) {
                         Text("Recommended For You")
                             .font(.title3)
@@ -139,39 +137,37 @@ struct MenuCard: View {
 
 struct RecommendationCard: View {
     var body: some View {
-        NavigationLink(destination: Text("Recommendation Details")) {
-            VStack(alignment: .leading) {
-                Image("LecHall") // Replace with your image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 280, height: 160)
-                    .clipped()
-                    .cornerRadius(12)
-                    .overlay(
-                        VStack {
-                            Spacer()
-                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [
-                                            Color.black.opacity(0.7),
-                                            Color.black.opacity(0)
-                                        ]),
-                                        startPoint: .bottom,
-                                        endPoint: .top
-                                    )
+        VStack(alignment: .leading) {
+            Image("LecHall")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 280, height: 160)
+                .clipped()
+                .cornerRadius(12)
+                .overlay(
+                    VStack {
+                        Spacer()
+                        Text("Campus lecture halls are reserved for various student activities, fostering collaboration.")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color.black.opacity(0.7),
+                                        Color.black.opacity(0)
+                                    ]),
+                                    startPoint: .bottom,
+                                    endPoint: .top
                                 )
-                        }
-                        .cornerRadius(12)
-                    )
-            }
-            .frame(width: 280)
+                            )
+                    }
+                    .cornerRadius(12)
+                )
         }
+        .frame(width: 280)
     }
 }
 

@@ -18,10 +18,6 @@ struct ClubActivitiesView: View {
     
     @State private var cardAppearances: [Bool] = Array(repeating: false, count: 3)
     
-    
-    
-    // Sample data for club activities
-    
     let clubActivities = [
         
         ClubActivity(
@@ -34,7 +30,7 @@ struct ClubActivitiesView: View {
             
             imageName: "DramaPic",
             
-            description: "A showcase at Nilsen-Lauritsen Theatre witnessed a standing performance.",
+            description: "Last night, the Drama Club delivered an unforgettable performance of Sanda Kinduri at Nelum Pokuna Theatre, captivating the audience from start to finish. The hall was packed with students, faculty, and guests, all eager to witness the club's latest production. Ravindu Perera stole the show with a breathtaking performance, while the entire cast brought the story to life with impeccable acting, stunning visuals, and flawless stage presence.",
             
             shortDescription: "A showcase at Nilsen-Lauritsen Theatre witnessed a standing performance.",
             
@@ -52,7 +48,7 @@ struct ClubActivitiesView: View {
             
             imageName: "ScrabblePic",
             
-            description: "Challenge your vocabulary and strategic thinking with fellow word enthusiasts.",
+            description: "Last night, the Drama Club delivered an unforgettable performance of Sanda Kinduri at Nelum Pokuna Theatre, captivating the audience from start to finish. The hall was packed with students, faculty, and guests, all eager to witness the club's latest production. Ravindu Perera stole the show with a breathtaking performance, while the entire cast brought the story to life with impeccable acting, stunning visuals, and flawless stage presence.",
             
             shortDescription: "Love word games? Test your vocabulary, strategy, and quick thinking at...",
             
@@ -70,7 +66,7 @@ struct ClubActivitiesView: View {
             
             imageName: "FootBall",
             
-            description: "Our rugby team secured an impressive victory against their rivals.",
+            description: "Last night, the Drama Club delivered an unforgettable performance of Sanda Kinduri at Nelum Pokuna Theatre, captivating the audience from start to finish. The hall was packed with students, faculty, and guests, all eager to witness the club's latest production. Ravindu Perera stole the show with a breathtaking performance, while the entire cast brought the story to life with impeccable acting, stunning visuals, and flawless stage presence.",
             
             shortDescription: "Our rugby team secured an impressive victory today, despite struggling to keep up...",
             
@@ -86,17 +82,14 @@ struct ClubActivitiesView: View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 16) {
-                    // Non-scrollable header text
                     Text("Club Activities")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.horizontal)
                         .padding(.top, 8)
                     
-                    // Scrollable content
                     ScrollView {
                         VStack(alignment: .leading, spacing: 16) {
-                            // Club activity cards
                             ForEach(Array(clubActivities.enumerated()), id: \.element.id) { index, activity in
                                 ClubActivityCard(activity: activity)
                                     .opacity(cardAppearances[index] ? 1 : 0)
@@ -107,7 +100,7 @@ struct ClubActivitiesView: View {
                                         }
                                     }
                             }
-                            Spacer(minLength: 80) // Space for search bar
+                            Spacer(minLength: 80)
                         }
                         .padding(.bottom)
                     }
@@ -118,10 +111,6 @@ struct ClubActivitiesView: View {
         }
     }
 }
-
-
-
-// Club Activity Card View
 
 struct ClubActivityCard: View {
 
@@ -134,25 +123,19 @@ struct ClubActivityCard: View {
         NavigationLink(destination: ClubActivityDetailView(activity: activity)) {
 
             VStack(alignment: .leading, spacing: 0) {
-                // Image with overlay
 
                 ZStack(alignment: .bottomLeading) {
-                    // Image
-
                     Image(activity.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(height: 160)
                         .clipped()
 
-                    // Club name and title overlay
-
                     VStack(alignment: .leading, spacing: 4) {
                         Text(activity.clubName)
                             .font(.subheadline)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
-                        
 
                         Text(activity.title)
                             .font(.headline)
@@ -163,7 +146,7 @@ struct ClubActivityCard: View {
                     }
                     .padding()
                     .background(
-                        // Gradient overlay for better text visibility
+                        
                         LinearGradient(
                             gradient: Gradient(colors: [
                                 Color.black.opacity(0.7),
@@ -174,8 +157,6 @@ struct ClubActivityCard: View {
                         )
                     )
                 }
-                // Description and location
-
                 VStack(alignment: .leading, spacing: 4) {
                     if !activity.location.isEmpty {
                         HStack(spacing: 4) {
@@ -202,7 +183,7 @@ struct ClubActivityCard: View {
             .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 1)
         }
         .padding(.horizontal)
-        .buttonStyle(PlainButtonStyle()) // This prevents the default button styling
+        .buttonStyle(PlainButtonStyle())
 
     }
 
@@ -218,19 +199,15 @@ struct ClubActivityDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Club name at top
                 Text(activity.clubName)
                     .font(.headline)
                     .foregroundColor(.blue)
                     .padding(.horizontal)
                 
-
-                // Activity title
                 Text(activity.title)
                     .font(.system(size: 32, weight: .bold))
                     .padding(.horizontal)
 
-                // Activity image
                 Image(activity.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -238,14 +215,10 @@ struct ClubActivityDetailView: View {
                     .cornerRadius(8)
                     .padding(.horizontal)
                 
-
-                // Full description
                 Text(activity.description)
                     .font(.body)
                     .foregroundColor(.secondary)
                     .padding(.horizontal)
-                // Additional details can be added here
-
                 Spacer()
             }
             .padding(.top)
@@ -253,9 +226,6 @@ struct ClubActivityDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-
-// Model for club activities
 
 struct ClubActivity: Identifiable {
     let id: Int

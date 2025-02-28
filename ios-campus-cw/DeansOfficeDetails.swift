@@ -5,15 +5,21 @@
 //  Created by Knight.Wolf on 2025-02-27.
 //
 
-
 import SwiftUI
 
 struct DeansOfficeDetails: View {
     let hallName: String
-    let pathwaySteps: [(title: String, description: String)]
     
-    @State private var availableVotes: Int = 100
-    @State private var unavailableVotes: Int = 0
+    private let pathwaySteps: [(title: String, description: String)] = [
+        ("Step 1", "-> Begin at the main entrance of the campus."),
+        ("Step 2", "-> Head straight ahead, passing by the Student Center on your right."),
+        ("Step 3", "-> Continue walking until you arrive at the courtyard area."),
+        ("Step 4", "-> At the library, make a left turn to proceed toward the next section of the campus."),
+        ("Step 5", "-> Once on the second floor, walk down the hallway.")
+    ]
+    
+    @State private var availableVotes: Int = 70
+    @State private var unavailableVotes: Int = 30
     @State private var selectedStatus: LectureHallStatus = .available
     
     enum LectureHallStatus: String {
@@ -23,28 +29,17 @@ struct DeansOfficeDetails: View {
     
     init(hallName: String) {
         self.hallName = hallName
-        
-        // Default pathway steps
-        self.pathwaySteps = [
-            (title: "Step 1: Enter the Campus", description: "Begin at the main entrance of the campus."),
-            (title: "Step 2: Walk Past the Student Center", description: "Head straight ahead, passing by the Student Center on your right."),
-            (title: "Step 3: Reach the Courtyard", description: "Continue walking until you arrive at the courtyard area."),
-            (title: "Step 4: Turn Left at the Library", description: "At the library, make a left turn to proceed toward the next section of the campus."),
-            (title: "Step 5: Find Lecture Hall A", description: "Once on the second floor, walk down the hallway.")
-        ]
     }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                // Hall image - using LecHall from assets
                 Image("DeansOffice")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(8)
                     .padding(.horizontal)
                 
-                // Hall description
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Lecture Hall Description")
                         .font(.caption)
@@ -57,7 +52,6 @@ struct DeansOfficeDetails: View {
                 .padding(.horizontal)
                 .padding(.top, 10)
                 
-                // Status update section
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Lecture Hall Status Update")
                         .font(.headline)
@@ -68,11 +62,9 @@ struct DeansOfficeDetails: View {
                         .foregroundColor(.gray)
                         .padding(.bottom, 5)
                     
-                    // Available option
                     HStack {
                         Button(action: {
                             selectedStatus = .available
-                            updateVotes(for: .available)
                         }) {
                             ZStack {
                                 Circle()
@@ -95,7 +87,6 @@ struct DeansOfficeDetails: View {
                         Text("\(availableVotes)%")
                     }
                     
-                    // Progress bar for Available
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
                             Rectangle()
@@ -112,11 +103,9 @@ struct DeansOfficeDetails: View {
                     .frame(height: 10)
                     .padding(.vertical, 5)
                     
-                    // Unavailable option
                     HStack {
                         Button(action: {
                             selectedStatus = .unavailable
-                            updateVotes(for: .unavailable)
                         }) {
                             ZStack {
                                 Circle()
@@ -139,7 +128,6 @@ struct DeansOfficeDetails: View {
                         Text("\(unavailableVotes)%")
                     }
                     
-                    // Progress bar for Unavailable
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
                             Rectangle()
@@ -162,17 +150,18 @@ struct DeansOfficeDetails: View {
                 Divider()
                     .padding(.vertical, 15)
                 
-                // Pathway description
                 VStack(alignment: .leading, spacing: 15) {
                     Text("Pathway Description")
                         .font(.headline)
                         .padding(.bottom, 5)
                     
-                    ForEach(0..<pathwaySteps.count, id: \.self) { index in
+                    ForEach(pathwaySteps, id: \.title) { step in
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(pathwaySteps[index].title)
+                            Text(step.0)
                                 .font(.subheadline)
-                            Text("-> \(pathwaySteps[index].description)")
+                                .fontWeight(.bold)
+                            
+                            Text(step.1)
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                         }
@@ -186,25 +175,11 @@ struct DeansOfficeDetails: View {
         .navigationTitle(hallName)
         .navigationBarTitleDisplayMode(.inline)
     }
-    
-    // Function to update votes when user makes a selection
-    private func updateVotes(for status: LectureHallStatus) {
-        // Simple implementation to simulate voting
-        switch status {
-        case .available:
-            availableVotes = min(100, availableVotes + 10)
-            unavailableVotes = max(0, 100 - availableVotes)
-        case .unavailable:
-            unavailableVotes = min(100, unavailableVotes + 10)
-            availableVotes = max(0, 100 - unavailableVotes)
-        }
-    }
 }
 
-// Preview provider for SwiftUI canvas
 struct DeansOfficeDetails_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack{
+        NavigationStack {
             DeansOfficeDetails(hallName: "Deans Office")
         }
     }

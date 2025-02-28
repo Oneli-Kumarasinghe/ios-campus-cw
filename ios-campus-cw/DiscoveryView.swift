@@ -12,7 +12,6 @@ struct DiscoveryView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                // Header with back button
                 HStack {
                     Text("Discovery")
                         .font(.title)
@@ -28,7 +27,6 @@ struct DiscoveryView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
                         
-                        // App Introduction
                         NavigationLink(
                             destination: AppIntroCarouselView(),
                             tag: TipType.appIntroduction,
@@ -47,7 +45,6 @@ struct DiscoveryView: View {
                         .buttonStyle(PlainButtonStyle())
                         .padding(.top, 10)
                         
-                        // Club Creation
                         NavigationLink(
                             destination: ClubCreationCarouselView(),
                             tag: TipType.clubCreation,
@@ -65,7 +62,6 @@ struct DiscoveryView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         
-                        // Student Discounts
                         NavigationLink(
                             destination: DiscountsCarouselView(),
                             tag: TipType.studentDiscounts,
@@ -83,7 +79,6 @@ struct DiscoveryView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         
-                        // Essential Apps
                         NavigationLink(
                             destination: EssentialAppsCarouselView(),
                             tag: TipType.essentialApps,
@@ -166,7 +161,6 @@ struct TipCard: View {
     }
 }
 
-// Next, update the GenericCarouselView to pass the image name to the CarouselCard
 struct GenericCarouselView: View {
     @State private var currentPage: Int
     @Environment(\.presentationMode) var presentationMode
@@ -181,10 +175,8 @@ struct GenericCarouselView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header with back button
             HStack {
                 Button(action: {
-                    // This will pop the view and return to the previous screen
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     HStack(spacing: 5) {
@@ -199,7 +191,6 @@ struct GenericCarouselView: View {
             .padding(.horizontal)
             .padding(.top, 10)
             
-            // Carousel
             TabView(selection: $currentPage) {
                 ForEach(0..<cards.count, id: \.self) { index in
                     CarouselCard(
@@ -219,20 +210,19 @@ struct GenericCarouselView: View {
     }
 }
 
-// First, update your CarouselCardData struct to include an image property
+
 struct CarouselCardData {
     var title: String
     var description: String
-    var imageName: String // New property for image name
+    var imageName: String
 }
 
-// Then update your CarouselCard view to use the image
 struct CarouselCard: View {
     var title: String
     var description: String
     var currentPage: Int
     var totalPages: Int
-    var imageName: String // Add this property
+    var imageName: String
     
     var body: some View {
         VStack {
@@ -242,7 +232,6 @@ struct CarouselCard: View {
                 .multilineTextAlignment(.center)
                 .padding(.top)
             
-            // Replace the Rectangle with Image
             Image(imageName)
                 .resizable()
                 .scaledToFit()
@@ -272,11 +261,6 @@ struct CarouselCard: View {
     }
 }
 
-
-// Specific Carousel Views for each type of tip
-
-// 1. App Introduction Carousel
-// App Introduction Carousel with images
 struct AppIntroCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -308,7 +292,6 @@ struct AppIntroCarouselView: View {
     }
 }
 
-// Club Creation Carousel with images
 struct ClubCreationCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -345,7 +328,6 @@ struct ClubCreationCarouselView: View {
     }
 }
 
-// Student Discounts Carousel with images
 struct DiscountsCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -377,7 +359,6 @@ struct DiscountsCarouselView: View {
     }
 }
 
-// Essential Apps Carousel with images
 struct EssentialAppsCarouselView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -414,7 +395,6 @@ struct EssentialAppsCarouselView: View {
     }
 }
 
-// Preview
 struct DiscoveryView_Previews: PreviewProvider {
     static var previews: some View {
         DiscoveryView()
