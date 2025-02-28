@@ -32,7 +32,7 @@ struct ClubActivitiesView: View {
             
             title: "Standing Ovation for the Drama Club !",
             
-            imageName: "drama_club",
+            imageName: "DramaPic",
             
             description: "A showcase at Nilsen-Lauritsen Theatre witnessed a standing performance.",
             
@@ -50,7 +50,7 @@ struct ClubActivitiesView: View {
             
             title: "Word Wizards Wanted, Join the Scrabble Club Today!",
             
-            imageName: "scrabble_club",
+            imageName: "ScrabblePic",
             
             description: "Challenge your vocabulary and strategic thinking with fellow word enthusiasts.",
             
@@ -68,7 +68,7 @@ struct ClubActivitiesView: View {
             
             title: "Dominant Display, Thrilling Win !",
             
-            imageName: "rugby_team",
+            imageName: "FootBall",
             
             description: "Our rugby team secured an impressive victory against their rivals.",
             
