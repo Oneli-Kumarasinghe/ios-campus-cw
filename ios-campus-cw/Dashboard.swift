@@ -61,7 +61,7 @@ struct HomeView: View {
                             )
                         }
                         
-                        NavigationLink(destination: Text("Map")) {
+                        NavigationLink(destination: MapView()) {
                             MenuCard(
                                 title: "Map",
                                 icon: "map.fill",
@@ -141,7 +141,7 @@ struct RecommendationCard: View {
     var body: some View {
         NavigationLink(destination: Text("Recommendation Details")) {
             VStack(alignment: .leading) {
-                Image("lecture_hall") // Replace with your image
+                Image("LecHall") // Replace with your image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 280, height: 160)

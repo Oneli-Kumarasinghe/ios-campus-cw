@@ -10,6 +10,11 @@
 		503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */; };
 		503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */; };
 		503653E32D6B7C49007BD544 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503653E22D6B7C49007BD544 /* LoginView.swift */; };
+		5086A9342D721ECE0051CA5B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086A9332D721ECE0051CA5B /* MapView.swift */; };
+		5086A9362D721EF30051CA5B /* LectureHallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086A9352D721EF30051CA5B /* LectureHallDetails.swift */; };
+		5086A9382D721F3F0051CA5B /* LibrariesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086A9372D721F3F0051CA5B /* LibrariesDetails.swift */; };
+		5086A93A2D721F630051CA5B /* DeansOfficeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086A9392D721F630051CA5B /* DeansOfficeDetails.swift */; };
+		5086A93C2D721F810051CA5B /* ParkingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5086A93B2D721F810051CA5B /* ParkingDetails.swift */; };
 		D50B4A4F2D6CEAC900823625 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B4A4E2D6CEAC900823625 /* Profile.swift */; };
 		D50B4A512D6F02A800823625 /* ClubActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50B4A502D6F02A800823625 /* ClubActivities.swift */; };
 		D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542838B2D6CD94F00F03006 /* Dashboard.swift */; };
@@ -46,6 +51,11 @@
 		503653DE2D6B7C0D007BD544 /* SignUpStepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepOne.swift; sourceTree = "<group>"; };
 		503653E02D6B7C39007BD544 /* SignUpStepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepTwo.swift; sourceTree = "<group>"; };
 		503653E22D6B7C49007BD544 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5086A9332D721ECE0051CA5B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5086A9352D721EF30051CA5B /* LectureHallDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHallDetails.swift; sourceTree = "<group>"; };
+		5086A9372D721F3F0051CA5B /* LibrariesDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrariesDetails.swift; sourceTree = "<group>"; };
+		5086A9392D721F630051CA5B /* DeansOfficeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeansOfficeDetails.swift; sourceTree = "<group>"; };
+		5086A93B2D721F810051CA5B /* ParkingDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetails.swift; sourceTree = "<group>"; };
 		D50B4A4E2D6CEAC900823625 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D50B4A502D6F02A800823625 /* ClubActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubActivities.swift; sourceTree = "<group>"; };
 		D542838B2D6CD94F00F03006 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
@@ -112,6 +122,11 @@
 		D5B90CC62D5DE0E100EAD9D2 /* ios-campus-cw */ = {
 			isa = PBXGroup;
 			children = (
+				5086A93B2D721F810051CA5B /* ParkingDetails.swift */,
+				5086A9392D721F630051CA5B /* DeansOfficeDetails.swift */,
+				5086A9372D721F3F0051CA5B /* LibrariesDetails.swift */,
+				5086A9352D721EF30051CA5B /* LectureHallDetails.swift */,
+				5086A9332D721ECE0051CA5B /* MapView.swift */,
 				EB5AEDE32D6F612700C0D991 /* DiscoveryView.swift */,
 				EB4965302D6E1712009DFFBC /* LectureScheduleView.swift */,
 				EB49652E2D6CE888009DFFBC /* NotificationView.swift */,
@@ -285,15 +300,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4965312D6E171E009DFFBC /* LectureScheduleView.swift in Sources */,
+				5086A93C2D721F810051CA5B /* ParkingDetails.swift in Sources */,
+				5086A9342D721ECE0051CA5B /* MapView.swift in Sources */,
+				5086A9382D721F3F0051CA5B /* LibrariesDetails.swift in Sources */,
 				503653DF2D6B7C0D007BD544 /* SignUpStepOne.swift in Sources */,
 				D5B90CCA2D5DE0E100EAD9D2 /* ContentView.swift in Sources */,
 				EB49652F2D6CE888009DFFBC /* NotificationView.swift in Sources */,
 				D50B4A512D6F02A800823625 /* ClubActivities.swift in Sources */,
-
 				503653E12D6B7C39007BD544 /* SignUpStepTwo.swift in Sources */,
+				5086A93A2D721F630051CA5B /* DeansOfficeDetails.swift in Sources */,
 				D50B4A4F2D6CEAC900823625 /* Profile.swift in Sources */,
 				503653E32D6B7C49007BD544 /* LoginView.swift in Sources */,
 				D542838C2D6CD94F00F03006 /* Dashboard.swift in Sources */,
+				5086A9362D721EF30051CA5B /* LectureHallDetails.swift in Sources */,
 				EB5AEDE42D6F613D00C0D991 /* DiscoveryView.swift in Sources */,
 				D5B90CC82D5DE0E100EAD9D2 /* ios_campus_cwApp.swift in Sources */,
 			);
